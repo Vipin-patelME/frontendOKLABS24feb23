@@ -10,8 +10,6 @@ import Login from './pages/Login';
 function App() {
 
   const JwtToken = localStorage.getItem("jToken")
-  if (!JwtToken){
-    return <Login />
   }
   return (
     <BrowserRouter>
