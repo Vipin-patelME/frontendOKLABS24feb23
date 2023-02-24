@@ -8,9 +8,6 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 
 function App() {
-
-  const JwtToken = localStorage.getItem("jToken")
-  }
   return (
     <BrowserRouter>
       <Routes>
