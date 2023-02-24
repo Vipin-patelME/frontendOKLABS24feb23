@@ -5,7 +5,6 @@ import './App.css';
 import Layout from './components/ui/Layout';
 import { RoutesArray } from './components/ui/Routes';
 import Home from './pages/Home';
-import Login from './pages/Login';
 
 function App() {
   return (
