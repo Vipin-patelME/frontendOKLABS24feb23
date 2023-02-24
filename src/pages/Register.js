@@ -7,15 +7,27 @@ export default function Register() {
 
   const onEmailInput =(e)=>{
       setEmail(e.target.value)
-      console.log(email)
+      //console.log(email)
+    
   }
 
   const onPassword=(e)=>{
     setPassword(e.target.value)
-    console.log(password)
+    //console.log(password)
+    
+
+    
   }
 
   const onSubmitData = ()=>{
+
+    const userData = {
+                        email,
+                        password,
+                      }
+
+    localStorage.setItem("userDetail", JSON.stringify(userData))
+
     const url = "http://localhost:1337/api/customers"
     const data = {
                     "data": {
@@ -41,6 +53,10 @@ export default function Register() {
       console.log(data)
     })
     .catch()
+
+    alert("Registration successfull")
+    
+    window.location.href = '/login'
   }
 
   return (
@@ -54,7 +70,7 @@ export default function Register() {
               <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
               <input type="password" onChange={onPassword} className="form-control" id="exampleInputPassword1" />
             </div>
-            <button type="button" onClick={onSubmitData} className="btn btn-primary">register</button>
+            <button type="button" onClick={onSubmitData} className="btn btn-primary">Register</button>
           </form>
       </main>
   )
